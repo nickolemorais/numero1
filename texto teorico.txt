@@ -1,0 +1,75 @@
+----------------------------------------
+Segurança
+
+Antes de falarmos de nossas APIis, precisamos abordar o tema de segurança das mesmas.
+
+Todas as nossas APIis são públicas e para acessá-las é necessário realizar uma chamada para uma API de Autenticação, a qual irá  fornecer um touken de acesso.
+
+Esse touken fornecido deverá ser utilizado nos rédêrs de todas as chamadas às APIis que serão consumidas, através do parâmetro autorizechion.
+
+Para realizar a chamada a API de Autenticação e receber esse touken, é necessário um claenti kii ( que é o usuário) e um claenti sicrytt ( que é a senha), ambos serão fornecidos pela Viittau.
+
+Lembrando que esse touken gerado,  tem um tempo de expiração de acordo com o ambiente e após sua expiração uma nova autenticação deve ser realizada, sendo gerado assim um novo touken.
+
+
+----------------------------------------
+Consulta de endereço
+
+Utilizamos a API consulta de endereço para encontrar a localização precisa do usuário dentro do território brasileiro, para posteriormente encontrar a rede que irá atendê-lo.
+
+Para utilizar seus recursos e suas respectivas operações não temos premissas necessárias.
+
+Na Busca de Endereço, é retornada uma lista de possíveis endereços que contenham as palavras enviadas.
+
+Cada endereço possui um ID único na base da Viittau e deverá ser utilizado no detalhamento do endereço.
+
+No detalhamento são retornadas também as informações da localização geográfica. latitude e longitude
+
+A partir do ID de um endereço é possível fazer uma consulta dos complementos.
+
+Caso o complemento que esteja buscando não seja retornado, é possível realizar a montagem de um complemento
+
+O complemento em si é formado de itens. Exemplo:
+
+Item 1: Bloco 2
+Item 2: Apartamento 1001
+
+São considerados tipos de complementos: Apartamento, bloco, quadra, lote, entre outros.
+
+
+----------------------------------------
+Consulta de Viabilidade
+
+Utilizamos a API Consulta de Viabilidade para ter acesso as facilidades de rede que atendem à localidade do usuário, ela retorna também a velocidade máxima disponível para venda.
+
+Para utilizar seus recursos e suas respectivas operações é necessário informar o ID de endereço obtido na API consulta de endereço e definir os complementos do endereço, caso existam.
+
+Caso a consulta de viabilidade seja realizada para uma localidade não contratada pelo cliente Viittau, um erro será retornado.
+
+Além de a API indicar se há ou não viabilidade técnica,  será informado também qual é a velocidade máxima que pode ser utilizada e retornará o ID da viabilidade.
+
+A API retornará uma descrição detalhada sobre a viabilidade 
+
+
+----------------------------------------
+Ordem de Serviço
+
+Utilizamos a API Ordem de Serviço para permitir que o cliente Viittau realize a criação, a consulta, a atualização ou o cancelamento de Ordens de Serviço
+
+Uma ÓS pode ser para instalação, retirada de equipamento, mudança de velocidade ou remanejamento de ponto.
+
+Após confirmar a viabilidade técnica (parcial ou total), é necessário abrir uma ÓS de instalação, sendo necessário, informar o plano da Viittau que o usuário escolheu, ou seja, qual foi a velocidade contratada.
+
+Uma vez aberta a ÓS de instalação será retornado um ID de Ordem de Serviço da Viittau
+
+Na abertura de ÓS de ativação é necessário informar o número de série da ONT que será ativada.
+
+Na ativação, o ID de subscrição é vinculado ao numero de série do equipamento que foi conectado à rede, e é criado também o mapeamento da rede da fibra até o usuário, para que seja possível realizar atendimentos de pós-venda.
+
+Caso seja enviada alguma informação incorreta na ordem de serviço de ativação, basta solicitar uma nova ordem de serviço de ativação. 
+
+Ao solicitar a abertura de uma ÓS de instalação, serão recebidas notificações sobre o andamento da Ordem de Serviço e seus detalhamentos.
+
+
+
+
