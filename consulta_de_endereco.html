@@ -10,51 +10,48 @@
         padding-bottom: 32px;
         margin-bottom: 40px;
         font-size: 30px">
-        Fulfillment
+        Fulfillment - API Consulta de Endereço
 </h1>
 
-<blockquote class="is-info">! Video Teórico</blockquote>
-<H3 style="color: rgb(123, 0, 255);"> Consulta de Endereço</H3>
-<iframe width="427px" height="240px" src="https://www.youtube.com/embed/Rkp86fZfM5E" title="Consulta de Endereço - Teoria" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<blockquote class="is-info">Fornece mecanismos para encontrar a localização precisa do usuário.</blockquote>
+<blockquote class="is-info1">Na Busca de Endereço, é retornada uma lista de possíveis endereços que contenham as palavras enviadas, com os dados básicos do endereço: Rua, Nº, Bairro, Cidade, CEP e UF.</blockquote>
+<blockquote class="is-info">Cada endereço possui um ID único na base da V.tal, retornado a partir do momento em que um único endereço é encontrado e deverá ser utilizado no detalhamento do endereço.</blockquote>
+<blockquote class="is-info1">No detalhamento são retornadas também as informações da localização geográfica (latitude e longitude)</blockquote>
+<blockquote class="is-info">A partir do ID de um endereço é possível fazer uma consulta dos complementos.</blockquote>
+<blockquote class="is-info1">São considerados tipos de complementos: Apartamento, bloco, quadra, lote, entre outros.</blockquote>
 
 <br>
-<br>
-
-<blockquote class="is-info">! Passo a Passo em Wiki</blockquote>
 <H3 style="color: rgb(123, 0, 255);">Consulta por texto</H3>
 <p style="font-size: 18px;"></p>
 <p style="font-size: 16px;">1.Em Consulta de endereço, "buscar por texto";</p>
 <p style="font-size: 16px;">2. Preencha os campos conforme desejado;</p>
-<img src="./img/1CET.png" alt="image.gif" style="width: 100%; max-width: 800px;">
+<img src="./img/1CET.png" alt="image.gif" style="width: 100%; max-width: 1000px;">
 <p style="font-size: 16px;">3. Clique em Send;</p>
 <p style="font-size: 16px;">4. A API retornará o "AddressID" que posteriormente será usado.</p>
 <br>
-
 <br>
 
 <H3 style="color: rgb(123, 0, 255);">Endereço com Complemento</H3>
 <p style="font-size: 18px;"></p>
 <p style="font-size: 16px;">1.Em "AddressComplements";</p>
 <p style="font-size: 16px;">2.Insira o AddressID no campo solicitado;</p>
-<img src="./img/2CEC.png" alt="image.gif" style="width: 100%; max-width: 800px;">
+<img src="./img/2CEC.png" alt="image.gif" style="width: 100%; max-width: 1000px;">
 <p style="font-size: 16px;">3. Clique em Send;</p>
 <p style="font-size: 16px;">4.Caso tenha a API retornará uma lista de complementos. </p>
 <br>
-
 <br>
 
 <H3 style="color: rgb(123, 0, 255);">Busca por Latitude e Longitude</H3>
 <p style="font-size: 18px;">1.Em "busca por ID";</p>
 <p style="font-size: 16px;">2.Insira o "AddressID";</p>
 <p style="font-size: 16px;">3.Ela retornará a latitude e a longitude;</p>
-<img src="./img/3.1CELL.png" alt="image.gif" style="width: 100%; max-width: 800px;">
+<img src="./img/3.1CELL.png" alt="image.gif" style="width: 100%; max-width: 1000px;">
 <p style="font-size: 16px;">4.Vá para "busca lat long";</p>
 <p style="font-size: 16px;">5.Preencha os campos com as informações adquiridas no passo 3, mais o "radius" com um numero menor que 50;</p>
 <p style="font-size: 16px;">6. Clique em Send;</p>
 <p style="font-size: 16px;">7. Ela retornará as informações do local.</p>
-<img src="./img/3.2CELL.png" alt="image.gif" style="width: 100%; max-width: 800px;">
+<img src="./img/3.2CELL.png" alt="image.gif" style="width: 100%; max-width: 1000px;">
 <br>
-
 <br>
 
 <H3 style="color: rgb(123, 0, 255);">Consulta com CEP Único</H3>
@@ -62,8 +59,13 @@
 <p style="font-size: 16px;">2.Digite o nome mais o numero do lugar com CEP único;</p>
 <p style="font-size: 16px;">3. Clique em Send;</p>
 <p style="font-size: 16px;">4.A API retornará a descrição do local, com o CEP único.</p>
-<img src="./img/4CECU.png" alt="image.gif" style="width: 100%; max-width: 800px;">
+<img src="./img/4CECU.png" alt="image.gif" style="width: 100%; max-width: 1000px;">
 <br>
+<br>
+<br>
+
+<blockquote class="is-info">! Video Teórico e Prático</blockquote>
+<iframe width="427px" height="240px" src="https://www.youtube.com/embed/Rkp86fZfM5E" title="Consulta de Endereço - Teoria" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 </body>
